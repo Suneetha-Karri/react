@@ -1,0 +1,377 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #f8f5ff;
+  color: #29233d;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: linear-gradient(90deg, #5425a8, #873ee8);
+  color: white;
+}
+
+.navbar h2 {
+  color: white;
+  margin: 0;
+  font-size: 27px;
+}
+
+.navbar button {
+  background: #ffb347;
+  color: #34204e;
+  border: none;
+  padding: 11px 20px;
+  margin-left: 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background: #ffd078;
+  transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 75px 20px;
+  background: linear-gradient(120deg, #ffe0cc, #e8d5ff, #d5e8ff);
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #5425a8;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #514565;
+}
+
+.hero .button {
+  background: linear-gradient(90deg, #ff9f43, #ff6b6b);
+  color: white;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+/* Services */
+.services {
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  color: #642bb5;
+  font-size: 30px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 35px 20px;
+}
+
+.service-card {
+  background: white;
+  padding: 15px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(84, 37, 168, 0.12);
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 25px rgba(84, 37, 168, 0.22);
+}
+
+.service-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  border-radius: 13px;
+}
+
+.service-card h3 {
+  color: #642bb5;
+  margin: 15px 0 8px;
+}
+
+.service-card p {
+  color: #ed7b27;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+}
+
+.service-card button,
+.auth button {
+  background: linear-gradient(90deg, #ff9f43, #ff6b6b);
+  color: white;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+/* Login and Signup */
+.auth {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(84, 37, 168, 0.15);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.auth h2 {
+  color: #642bb5;
+}
+
+.auth input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #d9c9f3;
+  border-radius: 8px;
+}
+
+/* Colourful About Section */
+.about {
+  padding: 70px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff0c9, #ffd6e7, #dfd1ff, #c9efff);
+  perspective: 1000px;
+}
+
+/* Moving Cuboid */
+.cuboid-container {
+  width: 100%;
+  max-width: 800px;
+  height: 200px;
+  margin: 0 auto 55px;
+  perspective: 1000px;
+}
+
+.cuboid {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: cuboidMove 5s infinite ease-in-out;
+}
+
+.cuboid-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 25px;
+  background: linear-gradient(120deg, #ff512f, #dd2476, #8e44ad, #4776e6);
+  background-size: 250% 250%;
+  animation: colourFlow 6s ease infinite;
+  box-shadow: 0 15px 35px rgba(111, 35, 150, 0.35);
+  color: white;
+  backface-visibility: hidden;
+}
+
+.cuboid-face h2 {
+  color: white;
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.cuboid-face p {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@keyframes cuboidMove {
+  0%, 100% {
+    transform: rotateX(0deg) rotateY(-7deg);
+  }
+  50% {
+    transform: rotateX(7deg) rotateY(7deg);
+  }
+}
+
+@keyframes colourFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Feature Cards */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.why-card {
+  background: linear-gradient(145deg, #ffffff, #fff0fa);
+  padding: 30px 20px;
+  border-radius: 22px;
+  box-shadow: 0 8px 22px rgba(117, 55, 165, 0.17);
+  border-bottom: 5px solid #c77dff;
+  transition: 0.3s;
+}
+
+.why-card:nth-child(2) {
+  border-bottom-color: #ffad60;
+}
+
+.why-card:nth-child(3) {
+  border-bottom-color: #54c8e8;
+}
+
+.why-card:nth-child(4) {
+  border-bottom-color: #ff7b9c;
+}
+
+.why-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.why-icon {
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+
+.why-card h3 {
+  color: #7135bd;
+  font-size: 19px;
+}
+
+.why-card p {
+  color: #625674;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #38205d;
+  color: white;
+  width: 100%;
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cuboid-container {
+    height: 220px;
+  }
+
+  .cuboid-face h2 {
+    font-size: 25px;
+  }
+
+  .service-grid {
+    padding: 20px 10px;
+  }
+
+  .navbar {
+    padding: 15px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+.booking-form {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffffff, #f4eaff);
+  box-shadow: 0 8px 25px rgba(75, 35, 120, 0.18);
+}
+
+.booking-form h2 {
+  color: #6525a8;
+  text-align: center;
+}
+
+.booking-form h3 {
+  color: #8b36c9;
+  margin-top: 22px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 9px 0;
+  border: 1px solid #d5b8f2;
+  border-radius: 9px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.booking-form label {
+  display: block;
+  margin-top: 12px;
+  color: #4d2875;
+  font-weight: bold;
+}
+
+.booking-form button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #812ed1, #e044a0);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.booking-card {
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 22px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
